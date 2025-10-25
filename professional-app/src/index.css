@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2563EB; /* blue-600 */
+  --color-primary-600: #1D4ED8;
+  --color-success: #10B981;
+  --color-warning: #FB923C;
+  --color-danger: #EF4444;
+  --text-default: #0F172A; /* slate-900 */
+  --text-muted: #6B7280; /* slate-500 */
+  --card-bg: #FFFFFF;
+  --card-border: #E6E9EE;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-default);
+}
+
+/* Page background similar to reference: very soft blue top-left to white */
+.page-bg {
+  background: linear-gradient(180deg, #eef6ff 0%, #ffffff 55%);
+}
+
+/* Card defaults using tokens */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+
+/* Utility for metric cards */
+.metric-card {
+  padding: 1.25rem; /* 20px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Table/report improvements */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.report-table th, .report-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #F1F5F9;
+  text-align: left;
+}
+.report-table thead th {
+  background: transparent;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Login card refinements */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+}
+
+/* Accent panel used in right-side analysis box (orange tone) */
+.accent-panel {
+  background: linear-gradient(180deg, rgba(255,246,230,0.6) 0%, rgba(255,250,240,0.4) 100%);
+  border: 1px solid rgba(253,224,138,0.6);
+  border-radius: 12px;
+}
+
+/* status badges default sizing */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Ensure Tailwind base styles are applied before custom component styles */

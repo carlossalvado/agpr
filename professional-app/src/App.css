@@ -1,0 +1,159 @@
+@layer base {
+  html {
+    @apply transition-colors duration-500;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-sky-50 to-white dark:from-slate-900 dark:to-slate-800 text-slate-900 dark:text-slate-100 font-sans;
+  }
+
+  * {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  /* Cards Modernos */
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700;
+    padding: 1rem;
+  }
+
+  .card-elevated {
+    @apply bg-white dark:bg-slate-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700 transform hover:-translate-y-1;
+    padding: 2rem; /* ensure consistent padding when used without utility classes */
+  }
+
+  .card-glass {
+    @apply bg-white/70 dark:bg-slate-800/70 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 dark:border-slate-700/50;
+  }
+
+  /* Botões */
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-800 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100 font-medium py-2.5 px-6 rounded-lg transition-all duration-200 border border-slate-300 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:focus:ring-offset-slate-800;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2.5 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200;
+  }
+
+  /* Navegação */
+  .nav-link {
+    @apply relative px-4 py-2 rounded-lg font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700;
+  }
+
+  .nav-link.active {
+    @apply bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300;
+  }
+
+  /* Status Badges */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300;
+  }
+
+  .status-confirmed {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+
+  .status-completed {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300;
+  }
+
+  .status-cancelled {
+    @apply bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300;
+  }
+
+  /* Layout */
+  .page-container {
+    @apply min-h-screen dark:from-slate-900 dark:to-slate-800;
+    /* use the page-bg helper for the soft blue top area */
+    background: linear-gradient(180deg, #eef6ff 0%, #ffffff 55%);
+  }
+
+  .content-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  /* Header */
+  .header {
+    @apply bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 shadow-sm;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    @apply bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700;
+  }
+
+  /* Animações */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  /* Gradientes */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-slate-600 to-slate-800;
+  }
+
+  /* Utilitários */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .prose-custom {
+    @apply prose prose-slate dark:prose-invert max-w-none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar customizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-500;
+}
